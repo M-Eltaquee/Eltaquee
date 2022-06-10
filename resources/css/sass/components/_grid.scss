@@ -1,0 +1,22 @@
+// container class
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include query(xs) {
+    width: 100%;
+  }
+  @include query(sm-min) {
+    width: 540px;
+  }
+  @include query(md-min) {
+    width: 750px;
+  }
+  @include query(lg-min) {
+    width: 970px;
+  }
+  @include query(xl) {
+    width: 1170px;
+  }
+}

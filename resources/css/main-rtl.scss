@@ -1,0 +1,84 @@
+/// HElPERS
+// Import functions
+@import './sass/helpers/functions';
+// Import variables
+@import './sass/helpers/variables';
+$right: 'left';
+$left: 'right';
+// Import mixins
+@import './sass/helpers/mixins';
+/// COMPONENTS
+// Import grid
+@import './sass/components/grid';
+// Import keyframes
+@import './sass/components/keyframes';
+// Import Dots
+@import './sass/components/dots';
+// Import Spikes
+@import './sass/components/spikes';
+// Import global
+@import './sass/components/heading';
+html {
+  direction: rtl;
+}
+/// PAGES & LAYOUT
+// Import global
+@import './sass/pages/global';
+// Import main nav
+@import './sass/layouts/header';
+// Import main page
+@import './sass/pages/main-page';
+// Import footer
+@import './sass/layouts/footer';
+
+// article
+section#articles {
+  .container {
+    .content {
+      .box {
+        .info {
+          span::after {
+            content: '\f30a';
+          }
+        }
+      }
+    }
+  }
+}
+// main footer
+//  services
+section#services {
+  .content {
+    .box {
+      .tail {
+        &::after {
+          transform: skewX(35deg);
+        }
+      }
+    }
+  }
+}
+footer {
+  background-color: #191919;
+  color: #b9b9b9;
+  .container {
+    .content {
+      .links {
+        li {
+          a {
+            &::before {
+              content: '';
+            }
+            &::after {
+              content: '\F100';
+              font-family: 'Font Awesome 5 free';
+              font-weight: 900;
+              color: $main-color;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

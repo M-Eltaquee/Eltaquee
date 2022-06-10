@@ -1,0 +1,32 @@
+// Colors
+$main-color: #2196f3;
+$main-color-hover: #1787e0;
+$secondary-color: #ececec;
+$red-color: rgb(244, 64, 54);
+$green-color: rgb(0, 150, 136);
+$blue-color: rgb(3, 169, 244);
+// height & width & spaces
+$mini-height: 72px;
+
+// - padding | margin | textalign - direction changed based on page direction
+// initial value is based on LTR direction
+$right: 'right';
+$left: 'left';
+//transtion & animation
+$trans-duration: 0.3s;
+// flex properties
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// main media queries
+$xs: '(max-width: 575.98px)';
+$sm-min: '(min-width: 576px)';
+$sm-max: '(max-width: 767.98px)';
+$md-min: '(min-width: 768px)';
+$md-max: '(max-width: 991.98px)';
+$lg-min: '(min-width: 992px)';
+$lg-max: '(max-width: 1199.98px)';
+$xl: '(min-width: 1200px) ';

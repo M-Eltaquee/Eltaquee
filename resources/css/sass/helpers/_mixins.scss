@@ -1,0 +1,80 @@
+// query mixin
+@mixin query($size) {
+  @if $size == 'xs' {
+    @media #{$xs} {
+      @content;
+    }
+  } @else if $size == 'sm-min' {
+    @media #{$sm-min} {
+      @content;
+    }
+  } @else if $size == 'sm-max' {
+    @media #{$sm-max} {
+      @content;
+    }
+  } @else if $size == 'md-min' {
+    @media #{$md-min} {
+      @content;
+    }
+  } @else if $size == 'md-max' {
+    @media #{$md-max} {
+      @content;
+    }
+  } @else if $size == 'lg-min' {
+    @media #{$lg-min} {
+      @content;
+    }
+  } @else if $size == 'lg-max' {
+    @media #{$lg-max} {
+      @content;
+    }
+  } @else if $size == 'xl' {
+    @media #{$xl} {
+      @content;
+    }
+  }
+}
+
+// keyframes and animation
+// keyframs
+@mixin keyF($key-name) {
+  @-webkit-keyframes #{$key-name} {
+    @content;
+  }
+  @keyframes #{$key-name} {
+    @content;
+  }
+}
+// special keyframe for changing backgroud takes more one parameter for number of backgrounds
+@mixin keyFF($key-name, $num) {
+  @-webkit-keyframes #{$key-name} {
+    @content;
+  }
+  @keyframes #{$key-name} {
+    @content;
+  }
+}
+// animation
+@mixin anim($arg...) {
+  animation: $arg;
+  -webkit-animation: $arg;
+  -moz-animation: $arg;
+  -o-animation: $arg;
+}
+
+// section padding
+@mixin section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+// overlay
+@mixin overlay($color, $transparency) {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color, $transparency);
+}

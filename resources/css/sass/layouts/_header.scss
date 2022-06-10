@@ -1,0 +1,263 @@
+header {
+  // nav style
+  nav#main-nav {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #ddd;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      @extend %flex;
+      flex-wrap: wrap;
+      position: relative;
+      .navbar-logo {
+        a {
+          @extend %flex;
+          color: $main-color;
+          height: $mini-height;
+          font: {
+            size: 26px;
+            weight: bold;
+          }
+        }
+      }
+      ul.nav {
+        @extend %flex;
+        .nav-item {
+          /// start styling mega menu
+          #mega-menu {
+            position: absolute;
+            border-bottom: 3px solid $main-color;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 40px;
+            background-color: #fff;
+            top: calc(100% + 50px);
+            transition: top $trans-duration ease, opacity $trans-duration ease;
+            opacity: 0;
+            z-index: -1;
+            .image {
+              flex-basis: 40%;
+              img {
+                max-width: 100%;
+              }
+            }
+            > ul {
+              flex: 1;
+              > li {
+                &:not(:last-child) {
+                  border-bottom: 1px solid #ddd;
+                }
+                > a {
+                  color: $main-color;
+                  padding: 15px;
+                  font-weight: bold;
+                  font-size: 18px;
+                  display: block;
+                  position: relative;
+                  overflow: hidden;
+                  &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    background-color: #fafafa;
+                    transition: $trans-duration all;
+                  }
+                  &:hover {
+                    &::before {
+                      left: 0;
+                    }
+                  }
+                  i {
+                    margin-#{$right}: 10px;
+                  }
+                }
+              }
+            }
+            @include query(lg-max) {
+              & > ul > li > a {
+                padding: 10px;
+                font-size: 14px;
+              }
+            }
+            @include query(md-max) {
+              gap: 20px;
+              & > ul > li > a {
+                padding: 10px;
+                font-size: 14px;
+              }
+            }
+            @include query(sm-max) {
+              & > .image {
+                display: none;
+              }
+            }
+            @include query(xs) {
+              & > ul > li > a {
+                font-size: 13px;
+                padding: 5px;
+              }
+            }
+          }
+          /// end styling mega menu
+          .nav-link {
+            @extend %flex;
+            height: $mini-height;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 18px;
+            overflow: hidden;
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 5px;
+              background-color: $main-color;
+              transition: $trans-duration all;
+            }
+            &:hover {
+              background-color: #fafafa;
+              color: $main-color-hover;
+              &::before {
+                left: 0;
+              }
+            }
+            &.lang-switcher {
+              font-size: 14px;
+              gap: 10px;
+            }
+          }
+          &:last-child .nav-link:hover + div#mega-menu,
+          #mega-menu:hover {
+            opacity: 1;
+            top: 100%;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    // media query for nav
+    @include query(sm-max) {
+      .container {
+        .navbar-logo {
+          width: 100%;
+          a {
+            height: 50px;
+          }
+        }
+        ul.nav {
+          width: 100%;
+          .nav-item {
+            .nav-link {
+              padding: 10px;
+              height: 40px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // landing style
+  section#landing {
+    position: relative;
+    overflow: hidden;
+    .container {
+      min-height: calc(100vh - 130px);
+      position: relative;
+      @extend %flex;
+      .landing-text {
+        max-width: 500px;
+        flex-basis: 50%;
+        position: relative;
+
+        h1 {
+          font-size: 40px;
+          letter-spacing: -2px;
+          margin-bottom: 10px;
+        }
+        p {
+          line-height: 2;
+          line-height: 1.7;
+          font-size: 23px;
+          color: #777;
+        }
+      }
+      .landing-image {
+        flex-basis: 50%;
+        position: relative;
+        img {
+          width: 100%;
+          position: relative;
+          @include anim(upDown 5s linear infinite);
+        }
+      }
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: skewY(-6deg);
+      transform-origin: top left;
+      background-color: #ddd;
+    }
+    .check-down {
+      color: $main-color;
+      display: block;
+      text-align: center;
+      font-size: 32px;
+      position: relative;
+      bottom: 0%;
+      margin-bottom: 20px;
+      i {
+        @include anim(upDown-fast 1.5s infinite);
+      }
+    }
+    // media query for landing
+    @include query(md-max) {
+      min-height: auto;
+      .container {
+        .landing-text {
+          text-align: center;
+          flex-basis: 100%;
+        }
+        .landing-image {
+          display: none;
+        }
+      }
+    }
+    @include query(sm-max) {
+      .container {
+        .landing-text {
+          h1 {
+            font-size: 28px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    @include query(xs) {
+      .container {
+        .landing-text {
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

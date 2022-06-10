@@ -1,0 +1,16 @@
+.dots {
+  opacity: 0.5;
+  position: absolute;
+  background-image: url(/resources/imgs/dots.png);
+  width: 186px;
+  height: 204px;
+  background-repeat: no-repeat;
+  &.up {
+    top: 200px;
+    right: 0;
+  }
+  &.down {
+    bottom: 200px;
+    left: 0;
+  }
+}

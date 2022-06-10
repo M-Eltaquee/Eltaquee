@@ -1,0 +1,107 @@
+// main footer
+
+footer {
+  background-color: #191919;
+  color: #b9b9b9;
+  .container {
+    .content {
+      padding-top: 70px;
+      padding-bottom: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 40px;
+      .main {
+        h2 {
+          font-size: 50px;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        .social {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          a {
+            font-size: 20px;
+            @extend %flex;
+            height: 50px;
+            width: 50px;
+            background-color: #313131;
+            transition: $trans-duration;
+            i {
+              display: block;
+            }
+            &.facebook:hover {
+              background-color: #4267b2;
+            }
+            &.twitter:hover {
+              background-color: #00acee;
+            }
+            &.youtube:hover {
+              background-color: #ff0000;
+            }
+          }
+        }
+        p {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+      }
+      .links {
+        li {
+          padding: 15px 0;
+          border-bottom: 1px solid #313131;
+          a {
+            transition: $trans-duration;
+            display: block;
+            &::before {
+              content: '\F101';
+              font-family: 'Font Awesome 5 free';
+              font-weight: 900;
+              color: $main-color;
+              margin-right: 10px;
+            }
+            &:hover {
+              transform: translateX(10px);
+              color: #fff;
+            }
+          }
+        }
+      }
+      .contact {
+        ul {
+          // all spans in the list
+          span {
+            display: block;
+            margin-bottom: 5px;
+          }
+          li {
+            padding: 15px 0;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+            i {
+              color: $main-color;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+      .footer-gallery {
+        img {
+          width: 78px;
+          height: 78px;
+          margin: 2px;
+        }
+      }
+    }
+  }
+  .tail {
+    padding: 20px;
+    border-top: 1px solid #313131;
+    text-align: center;
+    color: #fff;
+    span {
+      display: block;
+    }
+  }
+}
