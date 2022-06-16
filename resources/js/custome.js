@@ -42,6 +42,7 @@ const secondsCounter = document.getElementById('seconds-counter');
 let countTill = new Date('12-31-2022 23:59:59').getTime();
 // set interval to counter
 let setCounter = setInterval(function () {
+  console.log('jsjj');
   // count from time of viewing the page
   let countFrom = new Date().getTime();
   let difference = countTill - countFrom;
@@ -62,7 +63,7 @@ let setCounter = setInterval(function () {
   // seconds
   let seconds = Math.floor((difference % (1000 * 60)) / 1000);
   secondsCounter.textContent = seconds < 10 ? '0' + seconds : seconds;
-  if (difference > 0) {
+  if (difference === 0) {
     clearInterval(setCounter);
   }
 }, 1000);
