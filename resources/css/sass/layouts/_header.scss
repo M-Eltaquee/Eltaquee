@@ -136,7 +136,7 @@ header {
               gap: 10px;
             }
           }
-          &:last-child .nav-link:hover + div#mega-menu,
+          &.drop-down .nav-link:hover + div#mega-menu,
           #mega-menu:hover {
             opacity: 1;
             top: 100%;

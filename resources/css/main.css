@@ -315,7 +315,7 @@ header nav#main-nav {
       header nav#main-nav .container ul.nav .nav-item .nav-link.lang-switcher {
         font-size: 14px;
         gap: 10px; }
-    header nav#main-nav .container ul.nav .nav-item:last-child .nav-link:hover + div#mega-menu,
+    header nav#main-nav .container ul.nav .nav-item.drop-down .nav-link:hover + div#mega-menu,
     header nav#main-nav .container ul.nav .nav-item #mega-menu:hover {
       opacity: 1;
       top: 100%;
